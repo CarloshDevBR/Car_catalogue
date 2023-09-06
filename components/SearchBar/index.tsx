@@ -18,6 +18,7 @@ const SearchButton = ({ otherClasses }: OtherClassesProps) => (
 
 export const SearchBar = () => {
   const [manuFacturer, setManuFacturer] = useState<string>('');
+  const [model, setModel] = useState<string>('');
 
   const handleSearch = () => {};
 
@@ -25,9 +26,17 @@ export const SearchBar = () => {
     <form className="searchbar" onSubmit={handleSearch}>
       <div className="searchbar__item">
         <SearchManuFacturer manuFacturer={manuFacturer} setManuFacturer={setManuFacturer} />
+
+        <SearchButton otherClasses="sm:hidden" />
       </div>
 
-      <SearchButton otherClasses="sm:hidden" />
+      <div className="searchbar__item">
+        <Image src="/model-icon.png" alt="model" width={25} height={25} className="absolute w-[20px] h-[20px] ml-4" />
+
+        <input className="searchbar__input" type="text" name="model" value={model} onChange={(e) => setModel(e.target.value)} placeholder="Tiguan" />
+
+        <SearchButton otherClasses="sm:hidden" />
+      </div>
     </form>
   );
 };
