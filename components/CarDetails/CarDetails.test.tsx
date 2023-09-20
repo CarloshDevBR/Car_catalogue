@@ -1,10 +1,12 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
-import { fireEvent, render, act } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
+
 import { CarDetails } from './';
+
 import { mockCarDetails } from '@/mock/carMock';
 
-describe('CarDetails Component', () => {
+describe('Test group CarDetails', () => {
   beforeAll(() => {
     window.ResizeObserver = jest.fn(() => ({
       observe: jest.fn(),
@@ -26,9 +28,7 @@ describe('CarDetails Component', () => {
 
     const openButton = getByRole('button');
 
-    act(() => {
-      fireEvent.click(openButton);
-    });
+    fireEvent.click(openButton);
 
     expect(openButton).toBeDefined();
   });
@@ -38,9 +38,7 @@ describe('CarDetails Component', () => {
 
     const closeButton = getByRole('button');
 
-    act(() => {
-      fireEvent.click(closeButton);
-    });
+    fireEvent.click(closeButton);
 
     expect(queryByText('car model')).toBeNull();
   });
