@@ -35,13 +35,13 @@ export const Footer = () => {
         <p>@2023 CarHub. All Rights Reserved</p>
 
         <div className="footer__copyrights-links">
-          <Link href="/" className="text-gray-500">
+          <Link href="/privacy-policy" className="text-gray-500">
             Privacy Policy
           </Link>
         </div>
 
         <div className="footer__copyrights-links">
-          <Link href="/" className="text-gray-500">
+          <Link href="/terms-of-use" className="text-gray-500">
             Terms of Use
           </Link>
         </div>
