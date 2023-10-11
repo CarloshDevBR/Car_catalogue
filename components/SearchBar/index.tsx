@@ -6,6 +6,8 @@ import { SearchManuFacturer } from '../SearchManuFacturer';
 
 import Image from 'next/image';
 
+import { useRouter } from 'next/navigation';
+
 type OtherClassesProps = {
   otherClasses: string;
 };
@@ -17,15 +19,45 @@ const SearchButton = ({ otherClasses }: OtherClassesProps) => (
 );
 
 export const SearchBar = () => {
-  const [manuFacturer, setManuFacturer] = useState<string>('');
+  const [manufacturer, setManuFacturer] = useState<string>('');
   const [model, setModel] = useState<string>('');
 
-  const handleSearch = () => {};
+  const router = useRouter();
+
+  const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (manufacturer === '' && model === '') {
+      return alert('Please fill in the search bar');
+    }
+
+    updateSearchParams(model.toLowerCase(), manufacturer.toLowerCase());
+  };
+
+  const updateSearchParams = (model: string, manufacturer: string) => {
+    const searchParams = new URLSearchParams(window.location.search);
+
+    if (model) {
+      searchParams.set('model', model);
+    } else {
+      searchParams.delete('model');
+    }
+
+    if (model) {
+      searchParams.set('manufacturer', manufacturer);
+    } else {
+      searchParams.delete('manufacturer');
+    }
+
+    const newPathname = `${window.location.pathname}?${searchParams.toString()}`;
+
+    router.push(`${newPathname}`);
+  };
 
   return (
     <form className="searchbar" onSubmit={handleSearch}>
       <div className="searchbar__item">
-        <SearchManuFacturer manuFacturer={manuFacturer} setManuFacturer={setManuFacturer} />
+        <SearchManuFacturer manuFacturer={manufacturer} setManuFacturer={setManuFacturer} />
 
         <SearchButton otherClasses="sm:hidden" />
       </div>
