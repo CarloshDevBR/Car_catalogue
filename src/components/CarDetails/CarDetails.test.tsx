@@ -4,7 +4,7 @@ import { fireEvent, render } from '@testing-library/react';
 
 import { CarDetails } from './';
 
-import { mockCarDetails } from '@/mock/carMock';
+import { mockCarDetails } from '../mock/carMock';
 
 describe('Test group CarDetails', () => {
   beforeAll(() => {

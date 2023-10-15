@@ -4,7 +4,7 @@ import { Fragment, useState } from "react";
 
 import { useRouter } from "next/navigation";
 
-import { updateSearchParams } from "@/src/functions/updateSearchParams";
+import { updateSearchParams } from "../../functions/updateSearchParams";
 
 import { CustomFilterProps } from "../../types";
 

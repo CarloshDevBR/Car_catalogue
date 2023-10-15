@@ -1,4 +1,4 @@
-import { CarProps } from '@/types';
+import { CarProps } from '../types';
 
 export const mockCarDetails: CarProps = {
   city_mpg: 25,

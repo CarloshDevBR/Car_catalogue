@@ -2,11 +2,11 @@
 // @ts-nocheck
 import { render } from '@testing-library/react';
 
-import { mockCarDetails } from '@/mock/carMock';
+import { mockCarDetails } from '../mock/carMock';
 
 import { CarCard } from './';
 
-import { calculateCarRent } from '@/utils/calculateCarRent';
+import { calculateCarRent } from '../utils/calculateCarRent';
 
 describe('Test group CarCard', () => {
   it('Should correctly render', () => {

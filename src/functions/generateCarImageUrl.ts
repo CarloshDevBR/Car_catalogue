@@ -1,4 +1,4 @@
-import { CarProps } from '@/types';
+import { CarProps } from '../types';
 
 export const generateCarImageUrl = (car: CarProps, angle?: string) => {
   const url = new URL('https://cdn.imagin.studio/getimage');
