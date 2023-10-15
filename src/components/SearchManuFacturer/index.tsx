@@ -1,7 +1,7 @@
 'use client';
 
-import { manufacturers } from '@/constants';
-import { SearchManuFacturerProps } from '@/types';
+import { manufacturers } from '../../constants';
+import { SearchManuFacturerProps } from '../../types';
 
 import { Combobox, Transition } from '@headlessui/react';
 

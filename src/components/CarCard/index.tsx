@@ -1,8 +1,8 @@
 'use client';
 
-import { CarProps } from '@/types';
+import { CarProps } from '../../types';
 
-import { calculateCarRent } from '@/utils/calculateCarRent';
+import { calculateCarRent } from '../../functions/calculateCarRent';
 
 import Image from 'next/image';
 
@@ -12,7 +12,7 @@ import { useState } from 'react';
 
 import { CarDetails } from '../CarDetails';
 
-import { generateCarImageUrl } from '@/utils/generateCarImageUrl';
+import { generateCarImageUrl } from '../../functions/generateCarImageUrl';
 
 export const CarCard = ({ car }: { car: CarProps }) => {
   const { city_mpg, year, make, model, transmission, drive } = car;
